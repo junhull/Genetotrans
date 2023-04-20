@@ -58,7 +58,7 @@ def id_change():
     trascript_index["id"] = new_col[0]
     a = pd.merge(out, trascript_index, how="left", left_on=0, right_on="id")
     outdf = a.iloc[:, [3, 2, 0]]
-    outdf.to_csv(output, sep="\t", index=False)
+    outdf.to_csv(output, sep="\t", index=False,header=False)
 if __name__=="__main__":
     parser = argparse.ArgumentParser(
         description='This script aim to transform a single genome position to the transcript position', add_help=True)
